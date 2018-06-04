@@ -1,0 +1,31 @@
+{
+  "name": "GetURLs",
+  "version": "1.0.1",
+  "manifest_version": 2,
+  "description": "GetUrlsfromWebPage",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["/js/background.js"]
+  },
+   "content_scripts": [ {
+      "js": [ "/js/findURLs.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_end"
+   } ],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://*/",
+    "https://*/",
+    "<all_urls>",
+    "downloads"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
